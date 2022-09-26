@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title>Quelvim BArreto</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo">
+        <img class="logo__img" src="./images/logo-suila-foto.png" alt="">
+      </div>
+      <nav class="navbar">
+        <div class="navbar__button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__list">
+          <li class="navbar__list__item" onclick="menu()"><a class="link" href="#">Home</a></li>
+          <li class="navbar__list__item" onclick="menu()"><a class="link" href="#section1">About</a></li>
+          <li class="navbar__list__item" onclick="menu()"><a class="link" href="#section2">Services</a></li>
+          <li class="navbar__list__item" onclick="menu()"><a class="link" href="#section3">Products</a></li>
+          <li class="navbar__list__item" onclick="menu()"><a class="link" href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="hero" class="hero">
+    <div class="container">
+      <video src="/videos/video-1.mp4" autoPlay loop muted></video>
+      <h1>Suila Alencar</h1>
+      <p>FOTOGRAFIA</p>
+      <a class="button" href="#gallery">CONHECER TRABALHO</a>
+    </div>
+  </section>
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h1>GALERIAS</h1>
+      <div class="gallery__list">
+        <div class="gallery__list__item">
+          <img src="./images/PEQUENAS/img-1.jpg" alt="">
+        </div>
+        <div class="gallery__list__item">
+          <img src="./images/PEQUENAS/img-2.jpg" alt="">
+        </div>
+        <div class="gallery__list__item">
+          <img src="./images/PEQUENAS/img-3.jpg" alt="">
+        </div>
+        <div class="gallery__list__item">
+          <img src="./images/PEQUENAS/img-4.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer__subs">
+        <p class="footer__subs__title">
+          Cadastre-se e receba as últimas atualizações da página!
+        </p>
+        <p class="footer__subs__text">
+          Você pode se descadastrar a qualquer momento.
+        </p>
+        <div class="footer__subs__inputs">
+          <form>
+            <input name="email" type="email" placeholder="Seu Email" />
+            <Button>Enviar</Button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__social">
+        <div class="container">
+          <div class="footer__logo">
+            <img class="footer__logo__img" src="./images/logo-suila-foto.png" alt="" />
+            <p>Praça Adalgisa Mendes Alecrim, nº 45, Bairro João Durval</p>
+            <p>São Gabriel - BA</p>
+          </div>
+          <ul class="footer__social__icons">
+            <li class="social__icon"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="social__icon"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="social__icon"><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+            <li class="social__icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector(".navbar__button");
+    const menuLinks = document.querySelector(".navbar__list");
+
+    function menu() {
+      menuButton.classList.toggle("active");
+      menuLinks.classList.toggle("active");
+    }
+
+    menuButton.addEventListener("click", menu);
+  </script>
+</body>
+
+</html>
