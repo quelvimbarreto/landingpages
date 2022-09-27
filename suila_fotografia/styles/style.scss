@@ -8,6 +8,15 @@
   src: url("../fonts/AgencyFB.ttf");
 }
 
+:root {
+  --background: linear-gradient(
+    90deg,
+    rgb(28, 27, 27) 0%,
+    rgb(26, 23, 23) 100%
+  );
+  --altura-header: 80px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +27,7 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   background-color: #ccc;
-  //overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 video {
@@ -39,13 +48,16 @@ video {
 }
 //======================================================================HEADER
 .header {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: var(--background);
   color: #fff;
-  height: 116px;
+  height: var(--altura-header);
   width: 100%;
   position: fixed;
+  display: flex;
+  z-index: 9000;
 
   .container {
+    padding: 0 16px;
     justify-content: space-between;
 
     .header__logo {
@@ -54,7 +66,7 @@ video {
       justify-content: center;
 
       .logo__img {
-        width: 80px;
+        width: 100px;
         height: 100%;
       }
     }
@@ -111,17 +123,13 @@ video {
 
       .navbar__list {
         position: absolute;
-        top: 116px;
+        top: var(--altura-header);
         right: 100%;
         z-index: 500;
         list-style: none;
-        background: linear-gradient(
-          90deg,
-          rgb(28, 27, 27) 0%,
-          rgb(26, 23, 23) 100%
-        );
+        background: var(--background);
         width: 100%;
-        height: calc(100vh - 116px);
+        height: calc(100vh - var(--altura-header));
         display: flex;
         flex-direction: column;
         transition: all 0.5s ease-in;
@@ -129,19 +137,23 @@ video {
         .navbar__list__item {
           display: flex;
           align-items: center;
+          justify-content: center;
           color: #fff;
           height: 80px;
           cursor: pointer;
 
           .link {
+            text-align: center;
             text-decoration: none;
             color: inherit;
             display: block;
-            padding: 16px;
-            text-align: center;
+            padding: 22px;
+            width: 100%;
+            transition: all 0.3s ease-in;
 
             &:hover {
               background: #eb989e;
+              transition: 250ms;
             }
           }
         }
@@ -269,7 +281,7 @@ video {
         }
 
         &:hover img {
-          transform: scale(1.1);
+          transform: scale(1.2);
         }
       }
 

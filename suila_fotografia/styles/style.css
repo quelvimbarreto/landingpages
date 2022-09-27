@@ -6,6 +6,15 @@
   font-family: "AgencyFB";
   src: url("../fonts/AgencyFB.ttf");
 }
+:root {
+  --background: linear-gradient(
+    90deg,
+    rgb(28, 27, 27) 0%,
+    rgb(26, 23, 23) 100%
+  );
+  --altura-header: 80px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +25,7 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   background-color: #ccc;
+  overflow-x: hidden;
 }
 
 video {
@@ -37,13 +47,16 @@ video {
 }
 
 .header {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: var(--background);
   color: #fff;
-  height: 116px;
+  height: var(--altura-header);
   width: 100%;
   position: fixed;
+  display: flex;
+  z-index: 9000;
 }
 .header .container {
+  padding: 0 16px;
   justify-content: space-between;
 }
 .header .container .header__logo {
@@ -52,7 +65,7 @@ video {
   justify-content: center;
 }
 .header .container .header__logo .logo__img {
-  width: 80px;
+  width: 100px;
   height: 100%;
 }
 .header .container .navbar {
@@ -100,13 +113,13 @@ video {
 }
 .header .container .navbar .navbar__list {
   position: absolute;
-  top: 116px;
+  top: var(--altura-header);
   right: 100%;
   z-index: 500;
   list-style: none;
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: var(--background);
   width: 100%;
-  height: calc(100vh - 116px);
+  height: calc(100vh - var(--altura-header));
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease-in;
@@ -114,19 +127,23 @@ video {
 .header .container .navbar .navbar__list .navbar__list__item {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #fff;
   height: 80px;
   cursor: pointer;
 }
 .header .container .navbar .navbar__list .navbar__list__item .link {
+  text-align: center;
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 16px;
-  text-align: center;
+  padding: 22px;
+  width: 100%;
+  transition: all 0.3s ease-in;
 }
 .header .container .navbar .navbar__list .navbar__list__item .link:hover {
   background: #eb989e;
+  transition: 250ms;
 }
 @media screen and (min-width: 768px) {
   .header .container .navbar .navbar__list {
@@ -244,7 +261,7 @@ video {
   transition: all 1s ease;
 }
 .gallery .container .gallery__list .gallery__list__item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 @media screen and (min-width: 768px) {
   .gallery .container .gallery__list {
