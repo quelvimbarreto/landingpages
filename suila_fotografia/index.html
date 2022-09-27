@@ -46,31 +46,36 @@
       <h1>GALERIAS</h1>
       <div class="gallery__list">
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-1.jpg" alt="">
+          <img src="./images/PEQUENAS/img-1.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-2.jpg" alt="">
+          <img src="./images/PEQUENAS/img-2.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-3.jpg" alt="">
+          <img src="./images/PEQUENAS/img-3.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-4.jpg" alt="">
+          <img src="./images/PEQUENAS/img-4.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-5.jpg" alt="">
+          <img src="./images/PEQUENAS/img-5.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-6.jpg" alt="">
+          <img src="./images/PEQUENAS/img-6.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-7.jpg" alt="">
+          <img src="./images/PEQUENAS/img-7.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-8.jpg" alt="">
+          <img src="./images/PEQUENAS/img-8.jpg" alt="" onclick="onClick(this)">
         </div>
         <div class="gallery__list__item">
-          <img src="./images/PEQUENAS/img-9.jpg" alt="">
+          <img src="./images/PEQUENAS/img-9.jpg" alt="" onclick="onClick(this)">
+        </div>
+        <div id="modal" class="modal" onclick="this.style.display='none'">
+          <div class="modal-content">
+            <img id="img" src="" style="width:100%">
+          </div>
         </div>
       </div>
     </div>
@@ -109,6 +114,7 @@
     </div>
   </footer>
   <script>
+    //NAVIGATION
     const menuButton = document.querySelector(".navbar__button");
     const menuLinks = document.querySelector(".navbar__list");
 
@@ -118,6 +124,15 @@
     }
 
     menuButton.addEventListener("click", menu);
+
+    //MODAL
+    function onClick(element) {
+      const img = document.getElementById("img");
+      const modal = document.getElementById("modal");
+
+      img.src = element.src;
+      modal.style.display = "block";
+    }
   </script>
 </body>
 
